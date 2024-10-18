@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kricra-r <kricra-r@student.42.fr>          #+#  +:+       +#+        */
+/*   By: kricra-r <kricra-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-23 11:14:52 by kricra-r          #+#    #+#             */
-/*   Updated: 2024-09-23 11:14:52 by kricra-r         ###   ########.fr       */
+/*   Created: 2024/10/15 14:59:45 by kricra-r          #+#    #+#             */
+/*   Updated: 2024/10/15 19:59:16 by kricra-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s);
-
-int	main(void)
+void	ft_putnbr_fd(int n, int fd)
 {
-	printf ("%zu", ft_strlen("Hola"));
-	return (0);
+	if (n == -2147483648)
+	{
+		ft_putstr_fd("-2", fd);
+		n = 147483648;
+	}
+	if (n < 0)
+	{
+		n = -n;
+		ft_putchar_fd('-', fd);
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd((n % 10 + '0'), fd);
 }

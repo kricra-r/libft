@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kricra-r <kricra-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 11:56:50 by kricra-r          #+#    #+#             */
-/*   Updated: 2024/10/15 19:43:39 by kricra-r         ###   ########.fr       */
+/*   Created: 2024/10/04 10:21:51 by kricra-r          #+#    #+#             */
+/*   Updated: 2024/10/15 19:45:29 by kricra-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libft.h"
+
+char	*ft_strdup(const char *s1)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	char	*ptr;
+	int		size;
+
+	size = ft_strlen(s1);
+	ptr = malloc(sizeof(char) * (size + 1));
+	if (ptr == NULL)
+		return (NULL);
+	ft_memcpy(ptr, s1, size);
+	ptr[size] = '\0';
+	return (ptr);
 }

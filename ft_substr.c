@@ -1,31 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kricra-r <kricra-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 16:09:02 by kricra-r          #+#    #+#             */
-/*   Updated: 2024/10/15 20:55:03 by kricra-r         ###   ########.fr       */
+/*   Created: 2024/10/07 13:17:33 by kricra-r          #+#    #+#             */
+/*   Updated: 2024/10/17 19:24:12 by kricra-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*str;
 	size_t	i;
-	size_t	len;
 
-	len = ft_strlen(src);
-	if (n < 1)
-		return (len);
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if ((ft_strlen(s) - start) < len)
+		len = ft_strlen(s) - start;
+	str = (char *)malloc((len + 1) * 1);
+	if (!str)
+		return (NULL);
 	i = 0;
-	while (src[i] != '\0' && i < (n - 1))
+	while (i < len)
 	{
-		dst[i] = src[i];
+		str[i] = s[i + start];
 		i++;
 	}
-	dst[i] = '\0';
-	return (len);
+	str[i] = '\0';
+	return (str);
 }
+/*
+	s ="h o l a    p e p e"
+		0 1 2 3 4  5 6 7 8 
+	
+	substr(s , 10 , 9) = " pep"
+	
+
+*/

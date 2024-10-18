@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kricra-r <kricra-r@student.42.fr>          #+#  +:+       +#+        */
+/*   By: kricra-r <kricra-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-28 18:37:02 by kricra-r          #+#    #+#             */
-/*   Updated: 2024-09-28 18:37:02 by kricra-r         ###   ########.fr       */
+/*   Created: 2024/09/28 18:37:02 by kricra-r          #+#    #+#             */
+/*   Updated: 2024/10/15 19:45:25 by kricra-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ char	*ft_strchr(const char *s, int c)
 {
 	char	a;
 
-	a = c;// igualo la variable al valor de su parametro de entrada
-	while (*s)// mientras el puntero a la cadena exista
+	a = c;
+	while (*s)
 	{
-		if (*s == a)//si el puntero a la cadena a buscar sea igual al caracter a buscar
+		if (*s == a)
 		{
-			return ((char *) s);//devuelvo un char puntero a la coincidencia
+			return ((char *) s);
 		}
-		s++;//contador para poder recorrer el string
+		s++;
 	}
-	if (a == '\0')//mientras el caracter sea igual a null.
-		return ((char *)s);//devuelvo un char puntero a la coincidencia
+	if (a == '\0')
+		return ((char *)s);
 	return (NULL);
 }

@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kricra-r <kricra-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 11:56:50 by kricra-r          #+#    #+#             */
-/*   Updated: 2024/10/15 19:43:39 by kricra-r         ###   ########.fr       */
+/*   Created: 2024/10/12 19:23:35 by kricra-r          #+#    #+#             */
+/*   Updated: 2024/10/15 19:44:57 by kricra-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	if (s != NULL)
+		while (s[i])
+			write(fd, &s[i++], 1);
 }

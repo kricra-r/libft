@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kricra-r <kricra-r@student.42.fr>          #+#  +:+       +#+        */
+/*   By: kricra-r <kricra-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-09-30 16:57:54 by kricra-r          #+#    #+#             */
-/*   Updated: 2024-09-30 16:57:54 by kricra-r         ###   ########.fr       */
+/*   Created: 2024/09/30 16:57:54 by kricra-r          #+#    #+#             */
+/*   Updated: 2024/10/15 19:50:08 by kricra-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
